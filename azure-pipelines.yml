@@ -1,4 +1,14 @@
 name: '4.0$(rev:.r)'
+- task: SCVMM@1
+  inputs:
+    ConnectedServiceName: 'MySCVMMServer'
+    Action: 'NewVM'
+    NewVMsFromTemplates: true
+    NewVMsFromTemplatesVMList: 'Test'
+    VMTemplateSources: 'wewe'
+    computerNameFromTemplate: true
+    ScopeFilterForNewVM: 'HostFiltering'
+    HostFilterForNewVM: 'conto-lib1.bclab.com'
 
 trigger:
 - main
